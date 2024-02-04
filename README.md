@@ -46,40 +46,11 @@ or
 http://yourdomain.com/dev/build?flush=all
 ```
 
-## Adding Tailwind as for Styling
+## Tailwind as for Styling
 
-After running the tasks from the previous step, you can  run `npm install` or `yarn install` to install the required packages.
-
-```bash
-npm install
-```
-
-or 
+You'll need to install Tailwind CSS to your project to use the default styles of the Container Block and Column Block. 
 
 ```bash
-yarn install
+npm install tailwindcss postcss autoprefixer --save-dev
+
 ```
-
-You can generate a Tailwind config file by running the following command:
-
-```bash
-npx tailwindcss init
-```
-
-This will create a `tailwind.config.js` file in your project root.
-
-Add the following code to your styles.css file:
-
-```css
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-```
-
-You can then run the following command to generate a CSS file:
-
-```bash
-npx tailwindcss -i ./themes/yourtheme/css/styles.css -o ./themes/yourtheme/css/styles.min.css
-```
-
-This will generate a `styles.min.css` file in your project's CSS directory.

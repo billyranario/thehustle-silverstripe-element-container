@@ -15,11 +15,6 @@ class PublishTemplate extends BuildTask
             '/vendor/thehustle/silverstripe-element-container/templates/DNADesign/Elemental/Layout/ElementHolder.ss',
             '/app/templates/DNADesign/Elemental/Layout/ElementHolder.ss'
         );
-
-        $this->copyFile(
-            '/vendor/thehustle/silverstripe-element-container/postcss.config.js',
-            '/postcss.config.js'
-        );
     }
 
     private function copyFile($sourcePath, $destinationPath)
