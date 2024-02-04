@@ -6,8 +6,8 @@ use DNADesign\ElementalList\Model\ElementList;
 use SilverStripe\CMS\Controllers\CMSPageEditController;
 use SilverStripe\Control\Controller;
 use SilverStripe\Core\Extension;
-use TheHustle\Layout\ColumnBlock;
-use TheHustle\Layout\ContainerBlock;
+use TheHustle\Layout\Layout\ColumnBlock;
+use TheHustle\Layout\Layout\ContainerBlock;
 
 class NestedElementExtension extends Extension
 {
