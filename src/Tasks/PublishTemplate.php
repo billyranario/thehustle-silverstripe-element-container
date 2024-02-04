@@ -7,26 +7,38 @@ use SilverStripe\Dev\BuildTask;
 class PublishTemplate extends BuildTask
 {
     protected $title = 'Publish Template Task';
-    protected $description = 'Creates a copy for ElementHolder.ss to the project templates directory.';
+    protected $description = 'Copies ElementHolder.ss and postcss.config.js to the project directories.';
 
     public function run($request)
     {
-        $source = BASE_PATH . '/vendor/thehustle/silverstripe-element-container/templates/DNADesign/Elemental/Layout/ElementHolder.ss';
-        $destinationDir = BASE_PATH . '/app/templates/DNADesign/Elemental/Layout/';
-        $destination = $destinationDir . 'ElementHolder.ss';
+        $this->copyFile(
+            '/vendor/thehustle/silverstripe-element-container/templates/DNADesign/Elemental/Layout/ElementHolder.ss',
+            '/app/templates/DNADesign/Elemental/Layout/ElementHolder.ss'
+        );
+
+        $this->copyFile(
+            '/vendor/thehustle/silverstripe-element-container/postcss.config.js',
+            '/postcss.config.js'
+        );
+    }
+
+    private function copyFile($sourcePath, $destinationPath)
+    {
+        $source = BASE_PATH . $sourcePath;
+        $destination = BASE_PATH . $destinationPath;
+        $destinationDir = dirname($destination);
 
         if (!file_exists($destination)) {
             if (!is_dir($destinationDir)) {
                 mkdir($destinationDir, 0777, true);
             }
             if (copy($source, $destination)) {
-                echo "Template copied successfully.\n";
+                echo "File '$sourcePath' copied to '$destinationPath' successfully.\n";
             } else {
-                echo "Failed to copy template.\n";
+                echo "Failed to copy '$sourcePath'.\n";
             }
         } else {
-            echo "Template already exists. No action taken.\n";
+            echo "'$destinationPath' already exists. No action taken.\n";
         }
     }
 }
-
