@@ -1,0 +1,6 @@
+---
+Name: thehustleelementcontainer
+---
+DNADesign\Elemental\Models\BaseElement:
+  extensions:
+    - TheHustle\Layout\Elements\NestedElementExtension

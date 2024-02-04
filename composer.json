@@ -1,0 +1,34 @@
+{
+    "name": "thehustle/silverstripe-element-container",
+    "description": "A SilverStripe module providing container and column blocks.",
+    "type": "silverstripe-vendormodule",
+    "require": {
+        "php": "^7.1 || ^8.0",
+        "silverstripe/cms": "^4",
+        "silverstripe/framework": "^4",
+        "dnadesign/silverstripe-elemental": "^5.1",
+        "dnadesign/silverstripe-elemental-list": "^2.0@beta"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5 || ^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "TheHustle\\Layout\\": "src/"
+        }
+    },
+    "extra": {
+        "expose": [
+            "templates"
+        ]
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Billy Joel Ranario",
+            "email": "billyranario@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
