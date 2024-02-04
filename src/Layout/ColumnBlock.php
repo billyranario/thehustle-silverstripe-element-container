@@ -1,6 +1,6 @@
 <?php
 
-namespace TheHustle\Layout\Layout;
+namespace TheHustle\Layout;
 
 use DNADesign\Elemental\Extensions\ElementalAreasExtension;
 use DNADesign\Elemental\Models\BaseElement;

@@ -1,6 +1,6 @@
 <?php
 
-namespace TheHustle\Layout\Elements;
+namespace TheHustle\Elements;
 
 use DNADesign\ElementalList\Model\ElementList;
 use SilverStripe\CMS\Controllers\CMSPageEditController;

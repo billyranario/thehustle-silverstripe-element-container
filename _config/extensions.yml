@@ -1,4 +1,4 @@
 DNADesign\Elemental\Models\BaseElement:
   extensions:
     - DNADesign\ElementalList\Extension\BaseElementCMSEditLinkExtension
-    - TheHustle\Layout\Elements\NestedElementExtension
+    - TheHustle\Elements\NestedElementExtension
