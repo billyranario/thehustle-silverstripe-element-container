@@ -113,13 +113,13 @@ class ColumnBlock extends BaseElement
         $fields->addFieldToTab('Root.Responsive', DropdownField::create(
             'ColumnWidthSm',
             'Tablet Width',
-            $columnWidthOptions
+            $columnWidthSizes
         ));
 
         $fields->addFieldToTab('Root.Responsive', DropdownField::create(
             'ColumnWidthLg',
             'Mobile Width',
-            $columnWidthOptions
+            $columnWidthSizes
         ));
 
 
