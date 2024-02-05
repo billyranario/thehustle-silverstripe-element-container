@@ -24,10 +24,11 @@ class ColumnBlock extends BaseElement
         'CSSClass' => DBVarchar::class,
         'ColumnWidth' => DBVarchar::class,
         'ColumnWidthSm' => DBVarchar::class,
-        'ColumnWidthLg' => DBVarchar::class, 
+        'ColumnWidthLg' => DBVarchar::class,
     ];
 
     private static $column_width_sizes = [
+        null => 'None',
         '12' => 'Full (100%)',
         '11' => '11/12 (about 92%)',
         '10' => '5/6 (about 83%)',
@@ -116,14 +117,13 @@ class ColumnBlock extends BaseElement
             'ColumnWidthSm',
             'Tablet Width',
             $columnWidthSizes
-        ));
+        )->setEmptyString('(None)'));
 
         $fields->addFieldToTab('Root.Responsive', DropdownField::create(
             'ColumnWidthLg',
             'Mobile Width',
             $columnWidthSizes
-        ));
-
+        )->setEmptyString('(None)'));
 
         return $fields;
     }
