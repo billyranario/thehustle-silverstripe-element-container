@@ -1,4 +1,4 @@
-<div class="container $CSSClass <% if $FullWidth %>max-w-full<% else %>max-w-screen-lg<% end_if %>">
+<div class="container $CSSClass <% if $NoGutters %>no-gutters<% end_if %>">
     <% with $Elements %>
         $Me
     <% end_with %>
