@@ -114,13 +114,13 @@ class ColumnBlock extends BaseElement
             ->setDescription('Separate multiple classes with spaces. e.g. "col-md-6 bg-primary"');
 
         $fields->addFieldToTab('Root.Responsive', DropdownField::create(
-            'ColumnWidthSm',
+            'ColumnWidthLg',
             'Tablet Width',
             $columnWidthSizes
         )->setEmptyString('(None)'));
 
         $fields->addFieldToTab('Root.Responsive', DropdownField::create(
-            'ColumnWidthLg',
+            'ColumnWidthSm',
             'Mobile Width',
             $columnWidthSizes
         )->setEmptyString('(None)'));
