@@ -3,7 +3,7 @@
 namespace TheHustle\Tasks;
 
 use SilverStripe\Dev\BuildTask;
-use SilverStripe\View\SSViewer; // Import SSViewer to get the current theme
+use SilverStripe\Core\Config\Config; // Import Config
 
 class PublishTemplate extends BuildTask
 {
@@ -18,8 +18,8 @@ class PublishTemplate extends BuildTask
             '/app/templates/DNADesign/Elemental/Layout/ElementHolder.ss'
         );
 
-        // Identify the current theme and copy layout.css
-        $currentTheme = SSViewer::get_theme_folder();
+        // Get the current theme
+        $currentTheme = Config::inst()->get('SilverStripe\\View\\SSViewer', 'theme');
         if ($currentTheme) {
             $this->copyFile(
                 '/vendor/thehustle/silverstripe-element-container/css/layout.css',
