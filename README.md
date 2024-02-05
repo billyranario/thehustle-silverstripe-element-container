@@ -52,7 +52,3 @@ After running the tasks, there will be files being copied to your root directory
 `/assets/css/layout.css`
 
 Move the file to your theme's css directory and include it in your theme's `Page.ss` file.
-
-```html
-
-
