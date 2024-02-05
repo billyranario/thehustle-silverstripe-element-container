@@ -1,9 +1,8 @@
-<?php 
+<?php
 
 namespace TheHustle\Tasks;
 
 use SilverStripe\Dev\BuildTask;
-use SilverStripe\Core\Config\Config; // Import Config
 
 class PublishTemplate extends BuildTask
 {
@@ -12,22 +11,15 @@ class PublishTemplate extends BuildTask
 
     public function run($request)
     {
-        // Copy ElementHolder.ss
         $this->copyFile(
             '/vendor/thehustle/silverstripe-element-container/templates/DNADesign/Elemental/Layout/ElementHolder.ss',
             '/app/templates/DNADesign/Elemental/Layout/ElementHolder.ss'
         );
 
-        // Get the current theme
-        $currentTheme = Config::inst()->get('SilverStripe\\View\\SSViewer', 'theme');
-        if ($currentTheme) {
-            $this->copyFile(
-                '/vendor/thehustle/silverstripe-element-container/css/layout.css',
-                "/themes/{$currentTheme}/css/layout.css"
-            );
-        } else {
-            echo "No active theme found.\n";
-        }
+        $this->copyFile(
+            '/vendor/thehustle/silverstripe-element-container/css/layout.css',
+            "/assets/css/layout.css"
+        );
     }
 
     private function copyFile($sourcePath, $destinationPath)
