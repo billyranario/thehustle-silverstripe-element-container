@@ -110,18 +110,16 @@ class ColumnBlock extends BaseElement
         $fields->insertAfter('ColumnWidth', $cssField)
             ->setDescription('Separate multiple classes with spaces. e.g. "col-md-6 bg-primary"');
 
-        $fields->addTab('Responsive', _t(__CLASS__ . '.RESPONSIVETAB', 'Responsive'));
-
         $fields->addFieldToTab('Root.Responsive', DropdownField::create(
             'ColumnWidthSm',
             'Tablet Width',
-            $columnWidthSizes
+            $columnWidthOptions
         ));
 
         $fields->addFieldToTab('Root.Responsive', DropdownField::create(
             'ColumnWidthLg',
             'Mobile Width',
-            $columnWidthSizes
+            $columnWidthOptions
         ));
 
 
