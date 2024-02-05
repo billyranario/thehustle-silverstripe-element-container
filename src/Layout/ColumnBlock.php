@@ -26,21 +26,20 @@ class ColumnBlock extends BaseElement
     ];
 
     private static $column_width_sizes = [
-        'w-full' => 'Full (100%)',
-        'w-11/12' => '11/12 (about 92%)',
-        'w-5/6' => '5/6 (about 83%)',
-        'w-3/4' => '3/4 (75%)',
-        'w-2/3' => '2/3 (67%)',
-        'w-7/12' => '7/12 (about 58%)',
-        'w-1/2' => 'Half (6/12, 50%)',
-        'w-5/12' => '5/12 (about 42%)',
-        'w-1/3' => '1/3 (33%)',
-        'w-1/4' => '1/4 (25%)',
-        'w-1/6' => '1/6 (about 17%)',
-        'w-1/12' => '1/12 (about 8%)',
+        'col-12' => 'Full (100%)',
+        'col-11' => '11/12 (about 92%)',
+        'col-10' => '5/6 (about 83%)',
+        'col-9'  => '3/4 (75%)',
+        'col-8'  => '2/3 (67%)',
+        'col-7'  => '7/12 (about 58%)',
+        'col-6'  => 'Half (6/12, 50%)',
+        'col-5'  => '5/12 (about 42%)',
+        'col-4'  => '1/3 (33%)',
+        'col-3'  => '1/4 (25%)',
+        'col-2'  => '1/6 (about 17%)',
+        'col-1'  => '1/12 (about 8%)',
     ];
-    
-    
+
     private static $has_one = [
         'Elements' => ElementalArea::class,
         'BackgroundImage' => Image::class,
@@ -94,22 +93,38 @@ class ColumnBlock extends BaseElement
         return false;
     }
 
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
 
         $cssField = TextField::create('CSSClass', 'Column CSS Class');
-        
+
         $columnWidthSizes = self::$column_width_sizes;
         $columnWidthField = DropdownField::create(
             'ColumnWidth',
             'Column Width',
             $columnWidthSizes
         );
-    
+
         $fields->insertAfter('Title', $columnWidthField);
         $fields->insertAfter('ColumnWidth', $cssField)
             ->setDescription('Separate multiple classes with spaces. e.g. "col-md-6 bg-primary"');
-    
+
+        $fields->addTab('Responsive', _t(__CLASS__ . '.RESPONSIVETAB', 'Responsive'));
+
+        $fields->addFieldToTab('Root.Responsive', DropdownField::create(
+            'ColumnWidthSm',
+            'Tablet Width',
+            $columnWidthSizes
+        ));
+
+        $fields->addFieldToTab('Root.Responsive', DropdownField::create(
+            'ColumnWidthLg',
+            'Mobile Width',
+            $columnWidthSizes
+        ));
+
+
         return $fields;
     }
 }

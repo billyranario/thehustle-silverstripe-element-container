@@ -3,18 +3,31 @@
 namespace TheHustle\Tasks;
 
 use SilverStripe\Dev\BuildTask;
+use SilverStripe\View\SSViewer; // Import SSViewer to get the current theme
 
 class PublishTemplate extends BuildTask
 {
     protected $title = 'Publish Template Task';
-    protected $description = 'Copies ElementHolder.ss and postcss.config.js to the project directories.';
+    protected $description = 'Copies ElementHolder.ss, layout.css, and postcss.config.js to the project directories.';
 
     public function run($request)
     {
+        // Copy ElementHolder.ss
         $this->copyFile(
             '/vendor/thehustle/silverstripe-element-container/templates/DNADesign/Elemental/Layout/ElementHolder.ss',
             '/app/templates/DNADesign/Elemental/Layout/ElementHolder.ss'
         );
+
+        // Identify the current theme and copy layout.css
+        $currentTheme = SSViewer::get_theme_folder();
+        if ($currentTheme) {
+            $this->copyFile(
+                '/vendor/thehustle/silverstripe-element-container/css/layout.css',
+                "/themes/{$currentTheme}/css/layout.css"
+            );
+        } else {
+            echo "No active theme found.\n";
+        }
     }
 
     private function copyFile($sourcePath, $destinationPath)
