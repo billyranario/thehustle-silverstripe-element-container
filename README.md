@@ -46,11 +46,13 @@ or
 http://yourdomain.com/dev/build?flush=all
 ```
 
-## Tailwind as for Styling
+## Styling
+After running the tasks, there will be files being copied to your root directory. 
 
-You'll need to install Tailwind CSS to your project to use the default styles of the Container Block and Column Block. 
+`/assets/css/layout.css`
 
-```bash
-npm install tailwindcss postcss autoprefixer --save-dev
+Move the file to your theme's css directory and include it in your theme's `Page.ss` file.
 
-```
+```html
+
+
