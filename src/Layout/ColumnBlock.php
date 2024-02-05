@@ -22,7 +22,9 @@ class ColumnBlock extends BaseElement
 
     private static $db = [
         'CSSClass' => DBVarchar::class,
-        'ColumnWidth' => DBVarchar::class
+        'ColumnWidth' => DBVarchar::class,
+        'ColumnWidthSm' => DBVarchar::class,
+        'ColumnWidthLg' => DBVarchar::class, 
     ];
 
     private static $column_width_sizes = [
