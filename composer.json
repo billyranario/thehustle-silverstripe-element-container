@@ -19,7 +19,8 @@
     },
     "extra": {
         "expose": [
-            "templates"
+            "templates",
+            "client"
         ]
     },
     "license": "MIT",
