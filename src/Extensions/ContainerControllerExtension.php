@@ -9,6 +9,6 @@ class ContainerControllerExtension extends Extension
 {
     public function onAfterInit()
     {
-        Requirements::css('thehustle/silverstripe-blocks: client/dist/css/layout.css');
+        Requirements::css('thehustle/silverstripe-element-container: client/dist/css/layout.css');
     }
 }
