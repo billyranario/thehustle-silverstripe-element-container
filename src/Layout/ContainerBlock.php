@@ -48,13 +48,13 @@ class ContainerBlock extends BaseElement
 
     public function getType(): string
     {
-        return _t(__CLASS__ . '.BlockType', 'Container Blocks');
+        return _t(__CLASS__ . '.BlockType', 'Container');
     }
 
     public function getSummary(): string
     {
         $count = $this->Elements()->Elements()->Count();
-        $suffix = $count === 1 ? 'element' : 'elements';
+        $suffix = $count === 1 ? 'column' : 'columns';
 
         return 'Contains ' . $count . ' ' . $suffix;
     }

@@ -1,4 +1,4 @@
-<div class="container $CSSClass <% if $NoGutters %>no-gutters<% end_if %>">
+<div class="container-wrapper $CSSClass <% if $NoGutters %>no-gutters<% end_if %>">
     <% with $Elements %>
         $Me
     <% end_with %>

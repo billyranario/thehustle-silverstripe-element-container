@@ -67,7 +67,7 @@ class ColumnBlock extends BaseElement
 
     public function getType(): string
     {
-        return _t(__CLASS__ . '.BlockType', 'Container Column Blocks');
+        return _t(__CLASS__ . '.BlockType', 'Container Column');
     }
 
     public function getSummary(): string
