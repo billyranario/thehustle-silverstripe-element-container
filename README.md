@@ -10,17 +10,6 @@ This command installs its dependencies as well, including the `dnadesign/silvers
 
 After installation, you will need to run `http://yourdomain.com/dev/build` or `http://yourdomain.com/dev/build?flush=all` to create the database tables and flush the cache.
 
-## Running Tasks
-
-We need to run a task to copy a modified template from DNADesign's Elemental module to our module. This is to override the default layout of the Container Block and Column Block.
-
-```bash
-http://yourdomain.com/dev/tasks/TheHustle-Tasks-PublishTemplate
-```
-
-Most importantly, don't forget to run `dev/build` or `dev/build?flush=all` after running the task.
-
-
 ## Overriding Layouts
 
 To override Container Block and Column Block layouts, you can create a new template file in your app/templates directory. 
